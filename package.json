@@ -3,15 +3,22 @@
   "version": "0.0.1",
   "description": "A Remix plugin for linting your code with Solhint",
   "main": "index.js",
+  "extensionKind": [
+    "ui",
+    "web",
+    "workspace"
+  ],
   "scripts": {
     "build": "webpack --config webpack.config.js",
+    "serve": "yarn build && npx serve",
     "watch": "npm run build -- --watch",
     "deploy": "yarn build && yarn surge . solhint.surge.sh"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@remixproject/plugin": "^0.1.18",
+    "@remixproject/plugin": "^0.3.3",
+    "@remixproject/plugin-webview": "^0.3.3",
     "node-libs-browser": "^2.2.1",
     "solhint": "^3.0.0-rc.8",
     "yo-yo": "^1.4.1"
